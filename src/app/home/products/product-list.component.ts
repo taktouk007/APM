@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
     pageTitle = 'Product List';
+    imageWidth: number = 50;
+    imageMargin: number = 2;
+    showImage : boolean = false;
+    filter: string = 'cart';
     products : any[]= [
         {
             "productId": 2,
@@ -15,7 +19,7 @@ export class ProductListComponent {
             "description": "15 gallon capacity rolling garden cart",
             "price": 32.99,
             "starRating": 4.2,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+            "imageUrl": "https://banner2.kisspng.com/20180530/khr/kisspng-gardening-clip-art-garden-cart-5b0eba082e29a7.0659190415276917841891.jpg"
         },
         {
             "productId": 5,
@@ -25,7 +29,11 @@ export class ProductListComponent {
             "description": "Curved claw steel hammer",
             "price": 8.9,
             "starRating": 4.8,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+            "imageUrl": "https://4vector.com/i/free-vector-hammer-clip-art_115971_Hammer_clip_art_hight.png"
         }
     ];
+
+    toggleImage() : void {
+        this.showImage = !this.showImage;
+    }
 }
