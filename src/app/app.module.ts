@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-space.pipe';
+import { StarRatingComponent } from './shared/star-rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
     ProductListComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,

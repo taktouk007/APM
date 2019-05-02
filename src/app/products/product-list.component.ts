@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
 
 @Component({ 
@@ -6,7 +6,10 @@ import { IProduct } from './product';
     templateUrl : './product-list.component.html',
     styles : ['thead{color:#337AB7}']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit  {
+    ngOnInit(): void {
+        console.log("On init");
+    }
     pageTitle = 'Product List';
     imageWidth: number = 50;
     imageMargin: number = 2;
@@ -56,5 +59,9 @@ export class ProductListComponent {
         filterBy = filterBy.toLocaleLowerCase();
         return this.products.filter((product : IProduct) => 
             product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    }
+
+    onRatingClicked(message: string) : void {
+        this.pageTitle = 'Product List : ' + message;
     }
 }
